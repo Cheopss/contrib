@@ -15,18 +15,23 @@
         <IsA>library</IsA>
         <Summary>Mono runtime and class libraries, a C# compiler/interpreter</Summary>
         <Description>Mono is a C# compiler and interpreter. It also includes mono runtime and class libraries.</Description>
-        <Archive sha1sum="02e5155fb050faa0299f281268b3569f1fe8cb09" type="tarbz2">http://download.mono-project.com/sources/mono/mono-5.8.0.88.tar.bz2</Archive>
+        <Archive sha1sum="c4751ad4186be0b4f4e2162db7b357a76e2a6024" type="tarbz2">http://download.mono-project.com/sources/mono/mono-5.16.0.220.tar.bz2</Archive>
         <BuildDependencies>
+            <Dependency>ca-certificates</Dependency>
+            <Dependency>python-devel</Dependency>
+            <Dependency>python</Dependency>
+            <Dependency>bash</Dependency>
+            <Dependency>zlib-devel</Dependency>
+            <Dependency>zlib</Dependency>
             <Dependency>libgdiplus</Dependency>
-            <Dependency>cmake</Dependency>
         </BuildDependencies>
     </Source>
 
     <Package>
         <Name>mono-runtime</Name>
         <RuntimeDependencies>
-            <Dependency>zlib</Dependency>
-            <Dependency>libgcc</Dependency>
+            <Dependency>cmake</Dependency>
+            <Dependency>git</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="config">/etc/mono</Path>
@@ -47,7 +52,6 @@
             <Path fileType="library">/usr/lib/mono/*/chktrust*</Path>
             <Path fileType="library">/usr/lib/mono/*/gacutil*</Path>
             <Path fileType="library">/usr/lib/mono/*/gmcs*</Path>
-            <Path fileType="library">/usr/lib/mono/*/mcs*</Path>
             <Path fileType="library">/usr/lib/mono/*/mozroots*</Path>
             <Path fileType="library">/usr/lib/mono/*/setreg*</Path>
             <Path fileType="library">/usr/lib/mono/*/sn*</Path>
@@ -102,15 +106,10 @@
             <Path fileType="library">/usr/lib/*.la</Path>
             <Path fileType="library">/usr/lib/libmono*.so*</Path>
             <Path fileType="library">/usr/lib/mono</Path>
-            <Path fileType="library">/usr/lib/mono-source-libs</Path>
+            <Path fileType="library">/usr/lib/mono-source-libs</Path>            
             <Path fileType="data">/usr/share/mono-2.0</Path>
             <Path fileType="data">/usr/share/libgc-mono</Path>
-            <Path fileType="data">/usr/share/jay</Path>
-            <Path fileType="data">/usr/lib/binfmt.d</Path>
         </Files>
-        <AdditionalFiles>
-            <AdditionalFile owner="root" permission="0644" target="/usr/lib/binfmt.d/mono.conf">mono.binfmt.d</AdditionalFile>
-        </AdditionalFiles>
     </Package>
 
     <Package>
@@ -191,6 +190,18 @@
     </Package>
 
     <Package>
+        <Name>mono-mcs</Name>
+        <IsA>library</IsA>
+        <Summary>Sqlite database connectivity for Mono</Summary>
+        <RuntimeDependencies>
+            <Dependency>mono-runtime</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/mono/*/mcs*</Path>
+        </Files>
+    </Package>
+
+    <Package>
         <Name>mono-data-sqlite</Name>
         <IsA>library</IsA>
         <Summary>Sqlite database connectivity for Mono</Summary>
@@ -201,18 +212,20 @@
             <Path fileType="library">/usr/lib/mono/*/Mono.Data.Sqlit*</Path>
         </Files>
     </Package>
+    <!--
 
-<!--     <Package> -->
-<!--         <Name>mono-data-postgresql</Name> -->
-<!--         <IsA>library</IsA> -->
-<!--         <Summary>PostgreSQL database connectivity for Mono</Summary> -->
-<!--         <RuntimeDependencies> -->
-<!--             <Dependency>mono-runtime</Dependency> -->
-<!--         </RuntimeDependencies> -->
-<!--         <Files> -->
-<!--             <Path fileType="library">/usr/lib/mono/*/Npgsql*</Path> -->
-<!--         </Files> -->
-<!--     </Package> -->
+    <Package>
+        <Name>mono-data-postgresql</Name>
+        <IsA>library</IsA>
+        <Summary>PostgreSQL database connectivity for Mono</Summary>
+        <RuntimeDependencies>
+            <Dependency>mono-runtime</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/mono/*/Npgsql*</Path>
+        </Files>
+    </Package>
+    -->
 
     <Package>
         <Name>mono-data-oracle</Name>
@@ -370,12 +383,26 @@
     </Package>
 
     <History>
+        <Update release="3">
+            <Date>2018-12-02</Date>
+            <Version>5.16.0</Version>
+            <Comment>version pump,dep add</Comment>
+            <Name>AYDIN ATMACA</Name>
+            <Email>aydinatmaca@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2013-10-26</Date>
+            <Version>3.2.3</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Yusuf Aydemir</Name>
+            <Email>yusuf.aydemir@pisilinux.org</Email>
+        </Update>
         <Update release="1">
-            <Date>2018-01-06</Date>
-            <Version>5.8.0.88</Version>
-            <Comment>version bump</Comment>
-            <Name>Ali algul</Name>
-            <Email>aligulle3801@gmail.com</Email>
+            <Date>2012-12-25</Date>
+            <Version>3.0.2</Version>
+            <Comment>First release</Comment>
+            <Name>Erdinç Gültekin</Name>
+            <Email>admins@pisilinux.org</Email>
         </Update>
     </History>
 </PISI>
