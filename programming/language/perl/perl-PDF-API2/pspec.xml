@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>perl-PDF-API2</Name>
+        <Homepage>https://metacpan.org/pod/PDF::API2</Homepage>
+        <Packager>
+            <Name>AYDIN ATMACA</Name>
+            <Email>aydinatmaca@gmail.com</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>Perl facilitates the creation and modification of PDF files</Summary>
+        <Description>perl-PDF-API2 is a Perl module chain to facilitate the Creation and Modification of High-Quality PDF Files.</Description>
+        <Archive sha1sum="e744e4ad46fa77c8a1f14abef447cf7eb2c6a11f" type="targz">https://cpan.metacpan.org/authors/id/S/SS/SSIMMS/PDF-API2-2.033.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>perl</Dependency>
+            <Dependency>perl-Font-TTF</Dependency>
+            <Dependency>dejavu-fonts</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>perl-PDF-API2</Name>
+        <RuntimeDependencies>
+            <Dependency>perl</Dependency>
+            <Dependency>perl-Font-TTF</Dependency>
+            <Dependency>dejavu-fonts</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="3">
+            <Date>2019-06-25</Date>
+            <Version>2.033</Version>
+            <Comment>Rebuild</Comment>
+            <Name>AYDIN ATMACA</Name>
+            <Email>aydinatmaca@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2013-12-07</Date>
+            <Version>2.019</Version>
+            <Comment>Rebuild for perl</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2012-07-09</Date>
+            <Version>2.019</Version>
+            <Comment>First release</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>
