@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>unpaper</Name>
+        <Homepage>https://github.com/Flameeyes/unpaper</Homepage>
+        <Packager>
+            <Name>AYDIN ATMACA</Name>
+            <Email>aydinatmaca@gmail.com</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:console</IsA>
+        <Summary>Post-processing tool for scanned sheets of paper</Summary>
+        <Description>Unpaper is a post-processing tool for scanned sheets of paper, especially for book pages that have been scanned from previously created photocopies. The main purpose is to make scanned book pages better readable on screen after conversion to PDF.</Description>
+        <Archive sha1sum="24ce308b37d5800bda3b8e38b20bd7b16d6cac4e" type="targz">https://codeload.github.com/Flameeyes/unpaper/tar.gz/unpaper-6.1</Archive>
+        <BuildDependencies>
+            <Dependency>ffmpeg-devel</Dependency>
+            <Dependency>libxslt-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>unpaper</Name>
+        <RuntimeDependencies>
+            <Dependency>ffmpeg</Dependency>
+            <Dependency>libxslt</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc/unpaper/LICENSE</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>unpaper-docs</Name>
+        <Summary>Documentation files for unpaper</Summary>
+        <Files>
+            <Path fileType="doc">/usr/share/doc/unpaper</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="4">
+            <Date>2019-06-26</Date>
+            <Version>6.1</Version>
+            <Comment>rebuild</Comment>
+            <Name>Aydın ATMACA</Name>
+            <Email>aydinatmaca@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2014-02-17</Date>
+            <Version>0.3</Version>
+            <Comment>Rebuild.</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2011-03-01</Date>
+            <Version>0.3</Version>
+            <Comment>First release</Comment>
+            <Name>Pisi Linux Admins</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>
