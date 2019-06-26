@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>gtkimageview</Name>
+        <Summary xml:lang="tr">Simple image viewer widget</Summary>
+        <Description xml:lang="tr">gtkimageview is a simple image viewer widget for GTK. It makes writing image viewing and editing applications easy.</Description>
+    </Source>
+</PISI>
