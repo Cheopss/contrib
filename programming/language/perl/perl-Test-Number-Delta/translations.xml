@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>perl-Test-Number-Delta</Name>
+        <Summary xml:lang="tr">Compare the difference between numbers against a given tolerance</Summary>
+        <Description xml:lang="tr">At some point or another, most programmers find they need to compare floating-point numbers for equality. The typical idiom is to test if the absolute value of the difference of the numbers is within a desired tolerance, usually called epsilon.</Description>
+    </Source>
+</PISI>
