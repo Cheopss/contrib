@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>perl-Readonly</Name>
+        <Homepage>https://metacpan.org/pod/Readonly</Homepage>
+        <Packager>
+            <Name>AYDIN ATMACA</Name>
+            <Email>aydinatmaca@gmail.com</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>Facility for creating read-only scalars, arrays, hashes</Summary>
+        <Description>perl-Readonly is a facility for creating read-only scalars, arrays, hashes.</Description>
+        <Archive sha1sum="41153284db15e43e870b12c14f9c84da1d92da8c" type="targz">https://cpan.metacpan.org/authors/id/S/SA/SANKO/Readonly-2.05.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>perl</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>perl-Readonly</Name>
+        <RuntimeDependencies>
+            <Dependency>perl</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="3">
+            <Date>2019-06-25</Date>
+            <Version>2.05</Version>
+            <Comment>Rebuild</Comment>
+            <Name>AYDIN ATMACA</Name>
+            <Email>aydinatmaca@gmail.com</Email>
+        </Update>
+	<Update release="2">
+            <Date>2013-11-21</Date>
+            <Version>1.03</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Richard de Bruin</Name>
+            <Email>richdb@pisilinux.org</Email>
+        </Update>
+        <Update release="1">
+            <Date>2012-06-28</Date>
+            <Version>1.03</Version>
+            <Comment>First release</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>
