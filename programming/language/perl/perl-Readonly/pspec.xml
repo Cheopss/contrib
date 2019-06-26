@@ -12,7 +12,7 @@
         <IsA>library</IsA>
         <Summary>Facility for creating read-only scalars, arrays, hashes</Summary>
         <Description>perl-Readonly is a facility for creating read-only scalars, arrays, hashes.</Description>
-        <Archive sha1sum="41153284db15e43e870b12c14f9c84da1d92da8c" type="targz">https://cpan.metacpan.org/authors/id/S/SA/SANKO/Readonly-2.05.tar.gz</Archive>
+        <Archive sha1sum="c618bc07bab5b7303acd529e00cae82b679cb9c1" type="targz">http://search.cpan.org/CPAN/authors/id/L/LE/LEONT/Module-Build-0.4210.tar.gz</Archive>
         <BuildDependencies>
             <Dependency>perl</Dependency>
         </BuildDependencies>
