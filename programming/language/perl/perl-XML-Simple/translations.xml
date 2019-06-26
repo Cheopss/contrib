@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>perl-XML-Simple</Name>
+        <Summary xml:lang="tr">XML::Simple Perl module</Summary>
+        <Description xml:lang="tr">XML::Simple is an easy API to read/write XML. This package provides XML::Simple's Perl module.</Description>
+    </Source>
+</PISI>
