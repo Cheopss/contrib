@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Encoding=UTF-8
+Name=gscan2pdf
+GenericName=gscan2pdf
+GenericName[tr]=gscan2pdf
+Comment=dsdvsd
+Comment[tr]=dsdvsd
+Icon=gscan2pdf
+Exec=gscan2pdf
+Terminal=false
+StartupNotify=false
+Categories=Application;Game;
