@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 #
 # Licensed under the GNU General Public License, version 3.
@@ -7,6 +8,8 @@ from pisi.actionsapi import autotools
 from pisi.actionsapi import pisitools
 from pisi.actionsapi import shelltools
 from pisi.actionsapi import get
+
+WorkDir = "wine-%s" % get.srcVERSION()
 
 def setup():
     shelltools.system("install=wine.keyring")
@@ -22,27 +25,25 @@ def setup():
     #     to the 64bit files that was compiled in the first step (files in the work)
     #
     # More info can be obtained here: http://wiki.winehq.org/Wine64
-    shelltools.export("CPPFLAGS", "-D_FORTIFY_SOURCE=2 -D_FORTIFY_SOURCE=0")
-    
-    shelltools.system("sed -i -e 's!^loader server: libs/port libs/wine tools.*!& include!' Makefile.in")    
-    shelltools.system("make -C ./wine-staging-%s/patches DESTDIR=$(pwd) install" %get.srcVERSION())    
-    shelltools.system("sed 's|OpenCL/opencl.h|CL/opencl.h|g' -i configure*")
+    #shelltools.export("CPPFLAGS", "-U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0")
+    #shelltools.system("make -C ./wine-staging-%s/patches DESTDIR=$(pwd) install" %get.srcVERSION())    
+    #pisitools.flags.add("-fno-omit-frame-pointer")
+    #shelltools.system("sed -i 's|OpenCL/opencl.h|CL/opencl.h|g'  configure*")
     
     autotools.autoreconf("-vif")
     options = "--without-capi \
-               --with-curses \
-               --without-hal \
+               --without-oss \
+               --without-opencl \
                --without-gstreamer \
+               --without-hal \
                --with-dbus \
                --with-opengl \
-               --with-opencl \
                --with-alsa \
                --with-x \
-               --with-xattr \
-               --prefix=/usr"
+               "
 
     if get.buildTYPE() == "emul32":
-             
+        shelltools.export("PKG_CONFIG_PATH", "/usr/lib32/pkgconfig") 
         options += " --with-wine64=%s/work/wine-%s/build-wine \
                      --libdir=/usr/lib32 \
                    " % (get.pkgDIR(), get.srcVERSION())
@@ -59,7 +60,7 @@ def setup():
         shelltools.cd("build-wine")
         shelltools.system(". ../configure %s" %options)
 
-    autotools.configure(options)
+
 
 def build():
     shelltools.cd("build-wine")
@@ -79,7 +80,3 @@ def install():
     shelltools.cd("..")
 
     pisitools.dodoc("ANNOUNCE", "AUTHORS", "COPYING.LIB", "LICENSE*", "README", "documentation/README.*")
-    
-    pisitools.insinto("/usr/share/wine/mono/", "wine-mono-4.5.6.msi")
-    pisitools.insinto("/usr/share/wine/gecko/", "wine_gecko-2.40-x86.msi")
-    pisitools.insinto("/usr/share/wine/gecko/", "wine_gecko-2.40-x86_64.msi")
